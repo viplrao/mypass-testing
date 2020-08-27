@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block title %} Delete - myPass {% endblock %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block app_content %}
+<h1>Delete</h1>
+<div class="col md" style="width: 50%;margin-left: 290px;">
+{{ wtf.quick_form(form) }}
+</div>
+{% endblock %}
