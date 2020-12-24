@@ -13,4 +13,4 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Pagination var
-    POSTS_PER_PAGE = 2
+    POSTS_PER_PAGE = 25
