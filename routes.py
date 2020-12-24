@@ -108,7 +108,6 @@ def register():
         return render_template("register.html", form=form)
 
 
-
 @app.route("/add", methods=["GET", "POST"])
 @login_required
 def add():
