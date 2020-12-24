@@ -13,6 +13,7 @@ from datetime import datetime
 import re
 import forms
 from app import login
+from os import system
 
 
 @app.route('/', methods=["GET", "POST"])
@@ -107,23 +108,6 @@ def register():
         return render_template("register.html", form=form)
 
 
-@app.route("/hello/<name>")
-def hello_there(name):
-    now = datetime.now()
-    formatted_now = now.strftime("%A, %d %B, %Y at %X.")
-
-    # Filter the name argument to letters only using regular expressions. URL arguments
-    # can contain arbitrary text, so we restrict to safe characters only.
-    match_object = re.match("[a-zA-Z]+", name)
-
-    if match_object:
-        clean_name = match_object.group(0)
-    else:
-        clean_name = "Friend"
-
-    content = "Hello there, " + clean_name + "! It's " + formatted_now
-    return content
-
 
 @app.route("/add", methods=["GET", "POST"])
 @login_required
@@ -163,7 +147,7 @@ def delete():
         if password is None:
             flash("We couldn't find that password. You may have mistyped.")
             return redirect(url_for("index"))
-        
+
         db.session.delete(password)
         db.session.commit()
         flash(f"Password Deleted!")
