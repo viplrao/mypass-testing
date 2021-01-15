@@ -93,3 +93,5 @@ __pycache__/config.cpython-38.pyc
 __pycache__/config.cpython-38.pyc
 *.pyc
 __pycache__/config.cpython-38.pyc
+.DS_Store
+*.pyc
