@@ -1,3 +1,4 @@
+*.swp
 .history/**
 __pycache__/**
 .idea/workspace.xml
