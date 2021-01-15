@@ -1,19 +1,9 @@
-from flask import Flask, redirect, render_template, request, flash, url_for
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired
-from flask_login import LoginManager, UserMixin, current_user, login_user, logout_user, login_required
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField
-from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
-from app import app, db, migrate, login
+from flask import redirect, render_template, request, flash, url_for
+from flask_login import current_user, login_user, logout_user, login_required
+from app import app, db
 from models import User, Password
 from werkzeug.urls import url_parse
-from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import datetime
-import re
 import forms
-from app import login
-from os import system
 
 
 @app.route('/', methods=["GET", "POST"])
